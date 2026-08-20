@@ -1,0 +1,165 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco Awareness Center - GreenChoice</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f8f4;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+}
+
+.page-title{
+    text-align:center;
+    color:#2e7d32;
+    margin-bottom:30px;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h2{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#555;
+    line-height:1.6;
+}
+
+.badge{
+    display:inline-block;
+    background:#4caf50;
+    color:white;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    margin-bottom:10px;
+}
+
+.tip-box{
+    margin-top:30px;
+    background:#e8f5e9;
+    padding:20px;
+    border-left:6px solid #4caf50;
+    border-radius:10px;
+}
+
+.tip-box h3{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="page-title">🌱 GreenChoice Eco Awareness Center</h1>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <span class="badge">EPEAT</span>
+            <h2>What is EPEAT?</h2>
+            <p>
+                EPEAT is a global ecolabel that evaluates electronic products
+                based on environmental performance, sustainability, and recyclability.
+                Products with Gold certification meet the highest standards.
+            </p>
+        </div>
+
+        <div class="card">
+            <span class="badge">ENERGY STAR</span>
+            <h2>Why ENERGY STAR Matters</h2>
+            <p>
+                ENERGY STAR certified devices use less electricity,
+                helping consumers save money while reducing carbon emissions.
+            </p>
+        </div>
+
+        <div class="card">
+            <span class="badge">E-Waste</span>
+            <h2>Proper E-Waste Disposal</h2>
+            <p>
+                Electronic waste contains materials that can harm the environment.
+                Always recycle old electronics at certified collection centers.
+            </p>
+        </div>
+
+        <div class="card">
+            <span class="badge">Greenwashing</span>
+            <h2>Avoid Greenwashing</h2>
+            <p>
+                Some products claim to be eco-friendly without certification.
+                Always verify environmental claims using trusted labels such as
+                EPEAT and ENERGY STAR.
+            </p>
+        </div>
+
+        <div class="card">
+            <span class="badge">Energy Saving</span>
+            <h2>Reduce Electricity Usage</h2>
+            <p>
+                Enable power-saving mode, reduce screen brightness,
+                and unplug unused devices to lower electricity consumption.
+            </p>
+        </div>
+
+        <div class="card">
+            <span class="badge">Sustainability</span>
+            <h2>Extend Product Lifespan</h2>
+            <p>
+                Repair, upgrade, and maintain electronics whenever possible.
+                Extending product lifespan reduces environmental impact.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="tip-box">
+        <h3>💡 Daily Eco Tip</h3>
+        <p>
+            Choosing an EPEAT Gold and ENERGY STAR certified device can significantly
+            reduce energy consumption and environmental impact throughout its lifecycle.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

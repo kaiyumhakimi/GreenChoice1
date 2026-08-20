@@ -1,0 +1,696 @@
+
+
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+/* ==================================================
+   GLOBAL RESET
+================================================== */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ==================================================
+   HERO SECTION
+================================================== */
+/* ===============================
+   HERO (Modified to move up)
+================================= */
+.hero-section {
+    background: linear-gradient(135deg, #0b2419 0%, #3a805a 45%, #89c2a1 100%);
+    min-height: 80vh; /* Reduced from 100vh to pull content up */
+    width: 100%;
+    color: white;
+    position: relative;
+    padding-top: 60px; /* Reduced from 100px/110px */
+    display: flex;
+    align-items: center;
+}
+
+/* Ensure the second instance of hero-section matches */
+.hero-section:nth-of-type(2) {
+    min-height: 80vh;
+    padding-top: 60px;
+}
+
+/* Target the specific row inside hero to remove full-screen centering */
+.hero-section .row.min-vh-100 {
+    min-height: 70vh !important;
+    align-items: flex-start !important; /* Forces text/image to start higher */
+    padding-top: 20px;
+}
+
+/* Pull the container up slightly */
+.hero-section .container.py-5 {
+    padding-top: 1rem !important;
+}
+
+
+.navbar-brand {
+    color: white !important;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+}
+
+/* Hero Text */
+.hero-title-custom {
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 1.3;
+    max-width: 600px;
+    color: white;
+}
+
+/* Button */
+.btn-pill-white {
+    background: white;
+    color: #0b2419;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 35px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.btn-pill-white:hover {
+    transform: translateY(-3px);
+    background: #f8f9fa;
+}
+
+/* Hero Image */
+.hero-image-wrapper img,
+.rounded-mockup {
+    border-radius: 35px;
+    max-width: 100%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+/* ==================================================
+   SEARCH BOX
+================================================== */
+.search-box-custom {
+    background: white;
+    border-radius: 10px;
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    width: 380px;
+    height: 42px;
+}
+
+.search-box-custom input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+.search-icon {
+    color: #3a805a;
+    margin-right: 8px;
+}
+
+.close-icon {
+    color: #89c2a1;
+    cursor: pointer;
+}
+/* ==================================================
+   SEARCH PAGE - FULL DARK THEME
+================================================== */
+
+/* The main wrapper for the search page */
+.search-page-bg {
+    /* Instantly copies the index.php tri-color background gradient */
+    background: linear-gradient(135deg, #0b2419 0%, #3a805a 45%, #89c2a1 100%) !important; 
+    min-height: 100vh;
+    padding-top: 120px; /* Space for sticky navbar */
+}
+/* The Filter Card - Matching your Hero Gradient */
+.filter-card-custom {
+    background: #0b2419 !important; /* Changed from linear-gradient to solid hex */
+    border-radius: 25px;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.filter-card-custom h4, 
+.filter-card-custom h6, 
+.filter-card-custom label {
+    color: white !important;
+}
+
+/* Product Card override for search results */
+.search-product-card {
+    background: white !important;
+    border-radius: 20px !important;
+    transition: 0.3s ease;
+    border: none !important;
+}
+
+.search-product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4) !important;
+}
+
+/* Pagination Buttons */
+.search-page-bg .page-link {
+    background-color: #3a805a !important;
+    color: white !important;
+    border: none !important;
+    margin: 0 5px;
+    border-radius: 50% !important;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-page-bg .page-item.active .page-link {
+    background-color: white !important;
+    color: #0b2419 !important;
+    font-weight: bold;
+}
+
+/* ==================================================
+   SIDEBAR & OVERLAY - PREMIUM ECO STYLE
+================================================== */
+
+/* The Sidebar Container */
+.sidebar-custom {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 10001; /* Above everything */
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #0b2419 0%, #050f0a 100%);
+    overflow-x: hidden;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar Header Branding Area */
+.sidebar-header {
+    padding: 30px 25px;
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Close Button (X) */
+.closebtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1;
+}
+
+.closebtn:hover {
+    color: #4ade80;
+    transform: rotate(90deg);
+}
+
+/* Sidebar Navigation Links */
+.sidebar-link {
+    padding: 16px 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-link i {
+    width: 25px;
+    font-size: 1.1rem;
+    margin-right: 15px;
+    color: #4ade80; /* Eco Green Icons */
+}
+
+/* Hover Effect: Slide in from left */
+.sidebar-link:hover {
+    color: #ffffff;
+    background: rgba(74, 222, 128, 0.1); /* Subtle green glow */
+    border-left: 4px solid #4ade80;
+    padding-left: 30px; /* Slight push effect */
+}
+
+/* Visual Divider */
+.sidebar-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 15px 25px;
+}
+
+/* Special Login Link Style */
+.login-special {
+    margin-top: auto; /* Pushes to bottom */
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Sidebar Footer Text */
+.sidebar-footer {
+    padding: 15px 25px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+/* Overlay / Backdrop */
+#sidebarOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px); /* Modern glass blur */
+    z-index: 10000; /* Just below sidebar */
+    transition: opacity 0.3s ease;
+}
+
+/* ==================================================
+   CATEGORY PAGE STYLES
+================================================== */
+.category-page-bg {
+    background: #0b2419 !important; /* Brand dark green */
+    min-height: 100vh;
+    padding-top: 120px; /* Space for sticky navbar */
+}
+
+/* Redefining category cards for dark theme visibility */
+.category-card-custom {
+    background: #ffffff !important;
+    border-radius: 25px;
+    padding: 40px 25px;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.category-card-custom:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.category-card-custom .card-icon {
+    font-size: 3rem;
+    color: #3a805a; /* Brand mid-green */
+    margin-bottom: 20px;
+}
+
+.category-card-custom .category-title {
+    font-weight: 700;
+    color: #0b2419 !important;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.category-card-custom .category-text {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ==================================================
+   RECOMMENDED CARDS
+================================================== */
+.recommend-card {
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.recommend-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+}
+
+.recommend-badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: #3a805a;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.recommend-img {
+    height: 220px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommend-img img {
+    max-height: 160px;
+}
+
+.bg-success-soft {
+    background: rgba(58,128,90,0.12);
+}
+
+/* ==================================================
+   LEADERBOARD
+================================================== */
+.leaderboard-card {
+    background: white;
+    border-radius: 25px;
+}
+
+.rank-number {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.rank-1 { background: #3a805a; }
+.rank-2 { background: #5c9d7c; }
+.rank-3 { background: #89c2a1; }
+
+.bg-gold {
+    background: #f1c40f;
+    color: black;
+}
+
+.icon-circle-green {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(58,128,90,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3a805a;
+}
+
+/* ==================================================
+   SERVICES
+================================================== */
+.page-section {
+    padding: 80px 0;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+@media (max-width: 991px) {
+
+    .hero-title-custom {
+        font-size: 2rem;
+        text-align: center;
+        margin: auto;
+    }
+
+    .hero-section {
+        text-align: center;
+    }
+
+    .search-box-custom {
+        display: none !important;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+}
+.filter-card label {
+    color: #e0f2f1 !important;
+}
+.compare-box {
+    background: white;
+    padding: 6px 10px;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+}
+/* GLOBAL LINK COLOR RESET (IMPORTANT) */
+a {
+    color: #0b2419;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3a805a;
+}
+/* Eco score badge */
+.eco-score {
+    background: rgba(58,128,90,0.12);
+    color: #3a805a;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Product hover effect */
+.product-card {
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+.product-card.selected {
+    border: 2px solid #3a805a;
+    box-shadow: 0 0 0 4px rgba(58,128,90,0.15);
+}
+
+.eco-score {
+    background: rgba(58,128,90,0.12);
+    color: #3a805a;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.compare-box {
+    background: white;
+    padding: 6px 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+/* ===============================
+   STICKY NAVBAR
+================================= */
+
+
+/* HERO */
+.hero-section{
+    background:linear-gradient(135deg,#0b2419 0%,#3a805a 45%,#89c2a1 100%);
+    min-height:100vh;
+    padding-top:110px;
+    color:white;
+}
+
+/* TITLE */
+.hero-title-custom{
+    font-size:2.8rem;
+    font-weight:700;
+    line-height:1.4;
+}
+
+/* BUTTON */
+.btn-pill-white{
+    background:white;
+    color:#0b2419;
+    border-radius:50px;
+    padding:12px 35px;
+    font-weight:700;
+}
+/* ===============================
+   FIXED & STICKY NAVBAR
+================================= */
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: all 0.4s ease-in-out;
+    padding: 20px 0; /* Breathable padding when at the top */
+    background: transparent; /* Starts invisible */
+}
+
+/* This ensures that even on white sections, your green sticky bar remains readable */
+/* Add this to your .custom-navbar.scrolled section */
+.custom-navbar.scrolled {
+    background: rgba(11, 36, 25, 0.98) !important;
+    padding: 10px 0 !important; /* Shrinks the bar slightly as you scroll */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure the logo and icons stay visible/white */
+.custom-navbar .navbar-brand,
+.custom-navbar .text-white,
+.custom-navbar .btn {
+    color: #ffffff !important;
+}
+
+/* Adjusting search box behavior on scroll if needed */
+.custom-navbar.scrolled .search-box-custom {
+    background: rgba(255, 255, 255, 0.9);
+}
+.hero-section {
+    background: linear-gradient(135deg, #0b2419 0%, #3a805a 45%, #89c2a1 100%);
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    position: relative;
+    /* This padding-top ensures the text starts below the header */
+    padding-top: 100px; 
+    display: flex;
+    align-items: center;
+}
+.search-box-custom input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    padding-left: 5px;
+}
+.btn-dark:hover {
+    background-color: #1e3c2a !important; /* Your deep green */
+    border-color: #1e3c2a !important;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+/* ==================================================
+   SIDEBAR - FIXED & ISOLATED
+================================================== */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 10001; /* Ensure it stays above everything */
+    top: 0;
+    left: 0;
+    background: #0b1a13; /* Deep forest background */
+    overflow-x: hidden;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    display: block; /* Standard block to avoid Flexbox mess with index */
+}
+
+/* Header Area inside Sidebar */
+.sidebar-header-box {
+    padding: 30px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 20px;
+}
+
+/* Individual Sidebar Buttons */
+.sidebar-btn {
+    display: flex;
+    align-items: center;
+    margin: 5px 15px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #e0f2f1;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.sidebar-btn i {
+    width: 30px;
+    font-size: 1.1rem;
+    color: #4ade80; /* Eco Green Icons */
+}
+
+/* Hover State */
+.sidebar-btn:hover {
+    background: rgba(74, 222, 128, 0.1);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Close Button */
+.closebtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #4ade80;
+    background: none;
+    border: none;
+    line-height: 1;
+}
+
+/* Footer area for Login */
+.sidebar-footer-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 15px;
+    right: 15px;
+}
+
+/* The Overlay */
+#sidebarOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* This forces the main content wrapper to expand and swallow any empty white space */
+.search-page-bg {
+    flex: 1;
+}
